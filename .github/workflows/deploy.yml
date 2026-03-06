@@ -34,7 +34,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm run pages:build
+        run: pnpm dlx @cloudflare/next-on-pages
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy .vercel/output/static --project-name=gotechcom-landing --branch=main
+        run: pnpm dlx wrangler pages deploy .vercel/output/static --project-name=gotechcom-landing --branch=main
