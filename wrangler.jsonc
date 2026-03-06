@@ -1,5 +1,4 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "gotechcom-landing",
   "compatibility_date": "2025-04-01",
@@ -7,5 +6,9 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  "routes": [
+    { "pattern": "gotechcom.com/*", "zone_name": "gotechcom.com" },
+    { "pattern": "www.gotechcom.com/*", "zone_name": "gotechcom.com" }
+  ]
 }
