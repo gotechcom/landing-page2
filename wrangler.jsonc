@@ -7,5 +7,11 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  // Auto-map gotechcom.com domain to this Worker
+  // Requires gotechcom.com zone to be active in the same Cloudflare account
+  "routes": [
+    { "pattern": "gotechcom.com", "custom_domain": true },
+    { "pattern": "www.gotechcom.com", "custom_domain": true }
+  ]
 }
