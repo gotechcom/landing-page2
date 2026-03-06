@@ -1,0 +1,104 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="gtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="gtGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Subtle grid pattern for tech feel -->
+  <g opacity="0.05" stroke="white" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="400" x2="1200" y2="400" />
+    <line x1="0" y1="500" x2="1200" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+  </g>
+
+  <!-- Decorative circuit dots scattered -->
+  <g opacity="0.15">
+    <circle cx="150" cy="120" r="3" fill="#06b6d4" />
+    <circle cx="300" cy="80" r="2" fill="#2563eb" />
+    <circle cx="1050" cy="150" r="3" fill="#06b6d4" />
+    <circle cx="900" cy="100" r="2" fill="#2563eb" />
+    <circle cx="180" cy="500" r="2" fill="#06b6d4" />
+    <circle cx="1020" cy="520" r="3" fill="#2563eb" />
+    <line x1="150" y1="120" x2="300" y2="80" stroke="#06b6d4" stroke-width="0.5" />
+    <line x1="900" y1="100" x2="1050" y2="150" stroke="#2563eb" stroke-width="0.5" />
+  </g>
+
+  <!-- Logo icon group - centered at (430, 265) -->
+  <g transform="translate(430, 265) scale(3)">
+    <!-- Hexagonal shield shape -->
+    <path d="M32 2L58 16V48L32 62L6 48V16L32 2Z" fill="url(#gtGrad)" stroke="url(#gtGradLight)" stroke-width="1.5" />
+
+    <!-- Inner hexagon border -->
+    <path d="M32 8L52 19.5V44.5L32 56L12 44.5V19.5L32 8Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+
+    <!-- Circuit traces - top left -->
+    <circle cx="18" cy="18" r="1.5" fill="rgba(255,255,255,0.4)" />
+    <line x1="18" y1="18" x2="24" y2="18" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+    <line x1="18" y1="18" x2="18" y2="24" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+
+    <!-- Circuit traces - top right -->
+    <circle cx="46" cy="18" r="1.5" fill="rgba(255,255,255,0.4)" />
+    <line x1="46" y1="18" x2="40" y2="18" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+    <line x1="46" y1="18" x2="46" y2="24" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+
+    <!-- Circuit traces - bottom left -->
+    <circle cx="18" cy="46" r="1.5" fill="rgba(255,255,255,0.4)" />
+    <line x1="18" y1="46" x2="24" y2="46" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+    <line x1="18" y1="46" x2="18" y2="40" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+
+    <!-- Circuit traces - bottom right -->
+    <circle cx="46" cy="46" r="1.5" fill="rgba(255,255,255,0.4)" />
+    <line x1="46" y1="46" x2="40" y2="46" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+    <line x1="46" y1="46" x2="46" y2="40" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
+
+    <!-- Circuit nodes center -->
+    <circle cx="32" cy="12" r="1" fill="rgba(255,255,255,0.35)" />
+    <line x1="32" y1="12" x2="32" y2="18" stroke="rgba(255,255,255,0.2)" stroke-width="0.7" />
+    <circle cx="32" cy="52" r="1" fill="rgba(255,255,255,0.35)" />
+    <line x1="32" y1="52" x2="32" y2="46" stroke="rgba(255,255,255,0.2)" stroke-width="0.7" />
+
+    <!-- G letter -->
+    <path d="M16 24H28V28H20V36H28V32H24V30H30V40H16V24Z" fill="white" />
+
+    <!-- T letter -->
+    <path d="M34 24H48V28H43V40H39V28H34V24Z" fill="white" />
+
+    <!-- Accent dots -->
+    <rect x="29" y="25" width="2" height="2" rx="0.5" fill="rgba(255,255,255,0.5)" />
+    <rect x="29" y="37" width="2" height="2" rx="0.5" fill="rgba(255,255,255,0.5)" />
+  </g>
+
+  <!-- Company name text -->
+  <text x="600" y="500" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="72" letter-spacing="-1">
+    <tspan fill="white">GoTech</tspan><tspan fill="url(#textGrad)">Com</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="548" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="400" font-size="24" fill="rgba(255,255,255,0.5)" letter-spacing="4">
+    TECHNOLOGY SOLUTIONS
+  </text>
+</svg>

@@ -1,0 +1,52 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm exec opennextjs-cloudflare build
+
+      - name: Deploy Worker
+        run: pnpm exec wrangler deploy
+
+      - name: Map custom domains
+        run: |
+          for DOMAIN in gotechcom.com www.gotechcom.com; do
+            echo "Mapping $DOMAIN -> gotechcom-landing"
+            curl -sf -X PUT \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/scripts/gotechcom-landing/domains/records" \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              -H "Content-Type: application/json" \
+              -d "{\"hostname\":\"$DOMAIN\",\"service\":\"gotechcom-landing\",\"environment\":\"production\",\"override_existing_origin\":true,\"override_existing_dns_record\":true}" \
+              && echo " -> OK" || echo " -> Skipped (may already exist)"
+          done

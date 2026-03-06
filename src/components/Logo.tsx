@@ -1,0 +1,102 @@
+import React from "react";
+
+interface LogoProps {
+  className?: string;
+  size?: number;
+  showText?: boolean;
+}
+
+export default function Logo({ className = "", size = 40, showText = false }: LogoProps) {
+  return (
+    <span className={`inline-flex items-center gap-2 ${className}`}>
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="GoTechCom logo"
+      >
+        <defs>
+          <linearGradient id="gtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2563eb" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </linearGradient>
+          <linearGradient id="gtGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#60a5fa" />
+            <stop offset="100%" stopColor="#22d3ee" />
+          </linearGradient>
+        </defs>
+
+        {/* Hexagonal shield shape */}
+        <path
+          d="M32 2L58 16V48L32 62L6 48V16L32 2Z"
+          fill="url(#gtGrad)"
+          stroke="url(#gtGradLight)"
+          strokeWidth="1.5"
+        />
+
+        {/* Inner hexagon border for depth */}
+        <path
+          d="M32 8L52 19.5V44.5L32 56L12 44.5V19.5L32 8Z"
+          fill="none"
+          stroke="rgba(255,255,255,0.15)"
+          strokeWidth="1"
+        />
+
+        {/* Circuit traces - top left */}
+        <circle cx="18" cy="18" r="1.5" fill="rgba(255,255,255,0.4)" />
+        <line x1="18" y1="18" x2="24" y2="18" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+        <line x1="18" y1="18" x2="18" y2="24" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+
+        {/* Circuit traces - top right */}
+        <circle cx="46" cy="18" r="1.5" fill="rgba(255,255,255,0.4)" />
+        <line x1="46" y1="18" x2="40" y2="18" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+        <line x1="46" y1="18" x2="46" y2="24" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+
+        {/* Circuit traces - bottom left */}
+        <circle cx="18" cy="46" r="1.5" fill="rgba(255,255,255,0.4)" />
+        <line x1="18" y1="46" x2="24" y2="46" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+        <line x1="18" y1="46" x2="18" y2="40" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+
+        {/* Circuit traces - bottom right */}
+        <circle cx="46" cy="46" r="1.5" fill="rgba(255,255,255,0.4)" />
+        <line x1="46" y1="46" x2="40" y2="46" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+        <line x1="46" y1="46" x2="46" y2="40" stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
+
+        {/* Circuit node - center top */}
+        <circle cx="32" cy="12" r="1" fill="rgba(255,255,255,0.35)" />
+        <line x1="32" y1="12" x2="32" y2="18" stroke="rgba(255,255,255,0.2)" strokeWidth="0.7" />
+
+        {/* Circuit node - center bottom */}
+        <circle cx="32" cy="52" r="1" fill="rgba(255,255,255,0.35)" />
+        <line x1="32" y1="52" x2="32" y2="46" stroke="rgba(255,255,255,0.2)" strokeWidth="0.7" />
+
+        {/* "G" letter - stylized with geometric/tech feel */}
+        <path
+          d="M16 24H28V28H20V36H28V32H24V30H30V40H16V24Z"
+          fill="white"
+        />
+
+        {/* "T" letter - stylized with geometric/tech feel */}
+        <path
+          d="M34 24H48V28H43V40H39V28H34V24Z"
+          fill="white"
+        />
+
+        {/* Small digital accent dots along the letters */}
+        <rect x="29" y="25" width="2" height="2" rx="0.5" fill="rgba(255,255,255,0.5)" />
+        <rect x="29" y="37" width="2" height="2" rx="0.5" fill="rgba(255,255,255,0.5)" />
+      </svg>
+
+      {showText && (
+        <span
+          className="font-bold tracking-tight"
+          style={{ fontSize: size * 0.5, color: "currentColor", lineHeight: 1 }}
+        >
+          GoTech<span style={{ opacity: 0.7 }}>Com</span>
+        </span>
+      )}
+    </span>
+  );
+}
