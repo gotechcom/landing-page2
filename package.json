@@ -8,7 +8,7 @@
     "start": "next start -p 5714 || next start -p 5715",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "deploy": "opennextjs-cloudflare build && wrangler deploy"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.0.0",
