@@ -33,5 +33,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build & Deploy
-        run: pnpm run deploy
+      - name: Build
+        run: pnpm exec opennextjs-cloudflare build
+
+      - name: Register custom domains
+        run: |
+          for DOMAIN in gotechcom.com www.gotechcom.com; do
+            echo "Registering custom domain: $DOMAIN"
+            curl -sf -X PUT \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/scripts/gotechcom-landing/domains/records" \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              -H "Content-Type: application/json" \
+              -d "{\"hostname\":\"$DOMAIN\",\"service\":\"gotechcom-landing\",\"environment\":\"production\",\"override_existing_origin\":true,\"override_existing_dns_record\":true}" \
+              && echo " -> OK" || echo " -> Skipped (may already exist)"
+          done
+
+      - name: Deploy
+        run: pnpm exec opennextjs-cloudflare deploy
