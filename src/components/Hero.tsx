@@ -3,7 +3,7 @@
 import { useI18n } from "@/i18n";
 
 export default function Hero() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <section
@@ -60,7 +60,26 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="mt-20 animate-bounce">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm">
+          <a href="#products" className="text-muted-foreground hover:text-primary transition-colors">
+            {locale === "vi" ? "Sản phẩm" : "Products"}
+          </a>
+          <span className="text-border">|</span>
+          <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+            {locale === "vi" ? "Dịch vụ" : "Services"}
+          </a>
+          <span className="text-border">|</span>
+          <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors">
+            {locale === "vi" ? "Câu hỏi thường gặp" : "FAQ"}
+          </a>
+          <span className="text-border">|</span>
+          <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors">
+            {locale === "vi" ? "Đánh giá khách hàng" : "Testimonials"}
+          </a>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="mt-12 animate-bounce">
           <svg className="w-6 h-6 mx-auto text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
