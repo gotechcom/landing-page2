@@ -20,7 +20,7 @@ const serviceIcons = [
 const serviceKeys = ["infrastructure", "custom_software", "ai_consulting"] as const;
 
 export default function Services() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <section id="services" className="py-24 bg-muted/30">
@@ -50,6 +50,19 @@ export default function Services() {
                 <p className="text-muted-foreground leading-relaxed text-sm">
                   {service.description}
                 </p>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <a
+                    href="#products"
+                    className="inline-flex items-center text-xs text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {locale === "vi"
+                      ? "Xem sản phẩm liên quan"
+                      : "View related products"}
+                    <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             );
           })}

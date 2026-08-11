@@ -3,7 +3,7 @@
 import { useI18n } from "@/i18n";
 
 export default function Products() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const products = [
     {
@@ -84,6 +84,20 @@ export default function Products() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                 </svg>
               </a>
+
+              <div className="mt-4 pt-4 border-t border-border">
+                <a
+                  href="#services"
+                  className="inline-flex items-center text-xs text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {locale === "vi"
+                    ? "Tìm hiểu dịch vụ liên quan"
+                    : "Learn about related services"}
+                  <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
             </div>
           ))}
         </div>

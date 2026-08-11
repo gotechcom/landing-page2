@@ -15,6 +15,8 @@ export default function Header() {
     { href: "#about", label: t.nav.about },
     { href: "#products", label: t.nav.products },
     { href: "#services", label: t.nav.services },
+    { href: "#testimonials", label: locale === "vi" ? "Đánh giá" : "Reviews" },
+    { href: "#faq", label: locale === "vi" ? "Hỏi đáp" : "FAQ" },
     { href: "#contact", label: t.nav.contact },
   ];
 
