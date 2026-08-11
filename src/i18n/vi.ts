@@ -125,35 +125,6 @@ const vi = {
     ] as const,
   },
 
-  testimonials: {
-    title: "Khách hàng nói gì về chúng tôi",
-    subtitle:
-      "Lắng nghe chia sẻ từ các doanh nghiệp đã chuyển đổi hoạt động với giải pháp của GoTechCom.",
-    items: [
-      {
-        name: "TODO: Tên khách hàng",
-        role: "TODO: Chức danh / Công ty",
-        content:
-          "TODO: Đây là placeholder cho đánh giá thực tế từ khách hàng. Sẽ được cập nhật sau.",
-        rating: 5,
-      },
-      {
-        name: "TODO: Tên khách hàng",
-        role: "TODO: Chức danh / Công ty",
-        content:
-          "TODO: Đây là placeholder cho đánh giá thực tế từ khách hàng. Sẽ được cập nhật sau.",
-        rating: 5,
-      },
-      {
-        name: "TODO: Tên khách hàng",
-        role: "TODO: Chức danh / Công ty",
-        content:
-          "TODO: Đây là placeholder cho đánh giá thực tế từ khách hàng. Sẽ được cập nhật sau.",
-        rating: 5,
-      },
-    ] as const,
-  },
-
   contact: {
     title: "Liên hệ",
     subtitle:

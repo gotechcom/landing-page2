@@ -71,17 +71,6 @@ export type Translations = {
     }[];
   };
 
-  testimonials: {
-    title: string;
-    subtitle: string;
-    items: readonly {
-      name: string;
-      role: string;
-      content: string;
-      rating: number;
-    }[];
-  };
-
   contact: {
     title: string;
     subtitle: string;
@@ -242,35 +231,6 @@ const en = {
         question: "How can I get started with GoTechCom?",
         answer:
           "Getting started is easy. You can contact us through our contact form, email us at thanhle@gotechcom.com, or call us directly. We'll schedule an initial consultation to understand your needs and goals. From there, we'll provide a detailed proposal outlining the scope, timeline, and investment required. There's no obligation — we want to ensure we're the right fit for your project before moving forward.",
-      },
-    ] as const,
-  },
-
-  testimonials: {
-    title: "What Our Clients Say",
-    subtitle:
-      "Hear from businesses that have transformed their operations with GoTechCom's solutions.",
-    items: [
-      {
-        name: "TODO: Client Name",
-        role: "TODO: Position / Company",
-        content:
-          "TODO: This is a placeholder for a real client testimonial. Will be updated with actual feedback from our clients.",
-        rating: 5,
-      },
-      {
-        name: "TODO: Client Name",
-        role: "TODO: Position / Company",
-        content:
-          "TODO: This is a placeholder for a real client testimonial. Will be updated with actual feedback from our clients.",
-        rating: 5,
-      },
-      {
-        name: "TODO: Client Name",
-        role: "TODO: Position / Company",
-        content:
-          "TODO: This is a placeholder for a real client testimonial. Will be updated with actual feedback from our clients.",
-        rating: 5,
       },
     ] as const,
   },
