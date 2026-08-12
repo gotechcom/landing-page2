@@ -67,6 +67,9 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
   },
+  alternates: {
+    canonical: "https://gotechcom.com",
+  },
 };
 
 export default function RootLayout({
@@ -124,6 +127,101 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "GoStore",
+              applicationCategory: "ECommerceApplication",
+              operatingSystem: "Web",
+              url: "https://gostore.vn",
+              description:
+                "Nền tảng thương mại điện tử cho doanh nghiệp Việt Nam",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "VND",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "BetinyAI",
+              description: "Giải pháp AI thông minh cho doanh nghiệp",
+              brand: {
+                "@type": "Brand",
+                name: "GoTechCom",
+              },
+              url: "https://betinyai.com",
+              offers: {
+                "@type": "Offer",
+                availability: "https://schema.org/InStock",
+                priceCurrency: "VND",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Phát triển hạ tầng công nghệ",
+              provider: {
+                "@type": "Organization",
+                name: "GoTechCom",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "Vietnam",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Phát triển phần mềm theo yêu cầu",
+              provider: {
+                "@type": "Organization",
+                name: "GoTechCom",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "Vietnam",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Tư vấn giải pháp AI",
+              provider: {
+                "@type": "Organization",
+                name: "GoTechCom",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "Vietnam",
+              },
+            }),
+          }}
+        />
         {/* Umami Analytics - free, open-source, privacy-focused */}
         {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
           <script
@@ -136,6 +234,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded z-50"
+        >
+          Bỏ qua đến nội dung chính
+        </a>
         <Providers>{children}</Providers>
       </body>
     </html>
