@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useI18n } from "@/i18n";
 
 const stats = [
@@ -11,6 +12,14 @@ const stats = [
 
 export default function About() {
   const { t, locale } = useI18n();
+  const [expanded, setExpanded] = useState(false);
+
+  const sentences = t.about.description.split(/(?<=\.)\s+/);
+  const hasMore = sentences.length > 4;
+  const displayText =
+    expanded || !hasMore
+      ? t.about.description
+      : sentences.slice(0, 4).join(" ");
 
   return (
     <section id="about" className="py-24 bg-muted/30">
@@ -20,8 +29,31 @@ export default function About() {
             {t.about.title}
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            {t.about.description}
+            {displayText}
           </p>
+          {hasMore && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-4 inline-flex items-center gap-1 text-primary hover:underline font-medium text-sm"
+            >
+              {expanded
+                ? locale === "vi"
+                  ? "Thu gọn"
+                  : "Collapse"
+                : locale === "vi"
+                  ? "Đọc thêm"
+                  : "Read more"}
+              <svg
+                className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          )}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
             <a
               href="#products"
