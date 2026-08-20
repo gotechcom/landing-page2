@@ -108,6 +108,18 @@ export type Translations = {
       sitemap: string;
     };
   };
+
+  errors: {
+    not_found: {
+      title: string;
+      description: string;
+    };
+    generic: {
+      title: string;
+      description: string;
+    };
+    back_home: string;
+  };
 };
 
 const en = {
@@ -274,6 +286,18 @@ const en = {
       terms: "Terms of Service",
       sitemap: "Sitemap",
     },
+  },
+
+  errors: {
+    not_found: {
+      title: "Page not found",
+      description: "The page you're looking for doesn't exist or has been moved.",
+    },
+    generic: {
+      title: "Something went wrong",
+      description: "We're working on fixing it. Please try again later.",
+    },
+    back_home: "Back to home",
   },
 } as const satisfies Translations;
 
