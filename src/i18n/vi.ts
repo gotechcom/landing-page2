@@ -165,6 +165,19 @@ const vi = {
       sitemap: "Sơ đồ trang",
     },
   },
+
+  errors: {
+    not_found: {
+      title: "Không tìm thấy trang",
+      description: "Trang bạn tìm không tồn tại hoặc đã bị di chuyển.",
+    },
+    generic: {
+      title: "Đã xảy ra lỗi",
+      description: "Chúng tôi đang cố khắc phục. Vui lòng thử lại sau.",
+    },
+    back_home: "Về trang chủ",
+    retry: "Thử lại",
+  },
 } as const satisfies Translations;
 
 export default vi;
