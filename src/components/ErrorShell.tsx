@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -19,12 +20,12 @@ export default function ErrorShell({ code, title, description, homeLabel }: Erro
           <p className="text-5xl sm:text-7xl font-bold text-primary">{code}</p>
           <h1 className="mt-4 text-2xl font-semibold text-foreground">{title}</h1>
           <p className="mt-2 text-muted-foreground">{description}</p>
-          <a
+          <Link
             href="/"
             className="mt-6 inline-block px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
           >
             {homeLabel}
-          </a>
+          </Link>
         </div>
       </main>
       <Footer />
