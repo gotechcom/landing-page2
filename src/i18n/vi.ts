@@ -176,6 +176,7 @@ const vi = {
       description: "Chúng tôi đang cố khắc phục. Vui lòng thử lại sau.",
     },
     back_home: "Về trang chủ",
+    retry: "Thử lại",
   },
 } as const satisfies Translations;
 

@@ -119,6 +119,7 @@ export type Translations = {
       description: string;
     };
     back_home: string;
+    retry: string;
   };
 };
 
@@ -298,6 +299,7 @@ const en = {
       description: "We're working on fixing it. Please try again later.",
     },
     back_home: "Back to home",
+    retry: "Try again",
   },
 } as const satisfies Translations;
 
