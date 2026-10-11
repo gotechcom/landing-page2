@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo-og.svg",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "GoTechCom Technology Solutions",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
   alternates: {
     canonical: "https://gotechcom.com",
@@ -102,7 +102,7 @@ export default function RootLayout({
               name: "GoTechCom Technology JSC",
               alternateName: "GOTC CO.,LTD",
               url: "https://gotechcom.com",
-              logo: "https://gotechcom.com/favicon.svg",
+              logo: "https://gotechcom.com/icon-512.png",
               foundingDate: "2015-11-20",
               taxID: "0107123893",
               address: {
