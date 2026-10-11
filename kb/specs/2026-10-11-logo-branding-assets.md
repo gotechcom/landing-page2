@@ -53,7 +53,7 @@ Sau khi xong, người đặt có một thư mục `brand/` để lấy asset up
 4. `grep -cE "rgba\(|opacity=" brand/svg/mark-white.svg brand/svg/mark-black.svg brand/svg/mark-mono-blue.svg` → `0` cho từng file (bản 1 màu không dùng độ trong suốt).
 5. Mở `brand/preview.html` bằng Chrome headless chụp ảnh → mark 16px, 32px, 48px đọc được chữ "GT" (người đặt xem ảnh chụp và xác nhận; máy không chứng minh được "đọc được").
 6. `pnpm build` → thoát `0`; và `grep -nE "favicon.svg" src/app/layout.tsx` → không còn dòng `apple:` trỏ về `.svg`.
-7. `pnpm lint` → thoát `0`.
+7. `pnpm exec eslint src/components/Logo.tsx src/app/layout.tsx src/app/manifest.ts` → thoát `0` (sửa 11/10: `pnpm lint` toàn repo đỏ sẵn từ trước ở `ThemeProvider.tsx` và `i18n/index.ts`, hai file ngoài phạm vi — không sửa trong PR này).
 8. PR có mục `## Bằng chứng chạy` ghi output thật của các lệnh trên.
 
 ## Thiết kế

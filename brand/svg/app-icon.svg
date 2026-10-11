@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" role="img" aria-label="GoTechCom">
+  <defs>
+    <linearGradient id="gt" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#gt)"/>
+  <path transform="translate(512 512) scale(10.24) translate(-32 -32)" fill="#fff" fill-rule="evenodd" d="M32 2L58 16V48L32 62L6 48V16Z M14 22H30V27H19V37H23V32H30V42H14Z M34 22H50V27H44.5V42H39.5V27H34Z"/>
+</svg>
